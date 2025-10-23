@@ -1,7 +1,7 @@
-#include "figure.h"
-#include "triangle.h"
-#include "octagon.h"
-#include "square.h"
+#include "include/figure.h"
+#include "include/triangle.h"
+#include "include/octagon.h"
+#include "include/square.h"
 
 int main() {
     int n;
@@ -37,7 +37,7 @@ int main() {
     }
     long double Area_union = 0; 
     for (int i = 0; i < n; i++) {
-        std::cout << "Площадь " << i << " фигуры = " << figures[i]->Area();
+        std::cout << "Площадь " << i + 1 << " фигуры = " << figures[i]->Area();
         std::cout << ". Центр фигуры = " << figures[i]->Center() << std::endl;
         Area_union += figures[i]->Area();
     }

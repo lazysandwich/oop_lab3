@@ -17,14 +17,14 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_library(${CMAKE_PROJECT_NAME}_lib octagon.cpp triangle.cpp square.cpp Points.cpp figure.cpp)
+add_library(${CMAKE_PROJECT_NAME}_lib src/octagon.cpp src/triangle.cpp src/square.cpp src/Points.cpp src/figure.cpp)
 add_executable(${CMAKE_PROJECT_NAME}_exe main.cpp)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}_exe PRIVATE ${CMAKE_PROJECT_NAME}_lib)
 
 enable_testing()
 
-add_executable(tests tests.cpp)
+add_executable(tests test/tests.cpp)
 target_link_libraries(tests ${CMAKE_PROJECT_NAME}_lib gtest_main)
 
 add_test(NAME MyProjectTests COMMAND tests)
